@@ -297,6 +297,8 @@ print('Order total exclusing VAT: GBP', order_total)
 print('Order total including VAT: GBP', round(order_total * 1.2, 2))
 print("")
 
+print("testing")
+
 # python practical_1.py
 
 
