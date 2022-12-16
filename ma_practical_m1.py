@@ -208,8 +208,8 @@ dict_comp_2 = {'name': 'jane doe', 'age': 23, 'sex': 'female'}
 dict_comp_3 = {'name': 'jimmy doe', 'age': 2, 'sex': 'male'}
 list_of_dict = [dict_comp_1, dict_comp_2, dict_comp_3]
 new_mapped_list = [map_key['name'] for map_key in list_of_dict]
-print(new_mapped_list)
 print("\u0332".join("Comprehensions"))
+print(new_mapped_list)
 print('The new list with all characters capitalized is:', list_comp_upper)
 print(num_list_comp)
 print(new_num_list_comp)
@@ -293,14 +293,9 @@ print("\u0332".join("Shopping Cost Using Indexing"))
 print('Your order total is:')
 for key_x, val_y in order_subtotal.items():
     print('For ', order_cart[key_x], key_x, ' : GBP ', val_y)
-print('Order total exclusing VAT: GBP', order_total)
+print('Order total excluding VAT: GBP', order_total)
 print('Order total including VAT: GBP', round(order_total * 1.2, 2))
-print("")
-
-print("testing")
-
-# python practical_1.py
-
-
-
-# %%
+print("\n\n")
+print("END OF PRACTICE WORKBOOK.")
+print("\n\n")
+# python ma_practical_m1.py
