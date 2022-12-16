@@ -275,7 +275,7 @@ if my_n > my_x:
 else:
     print(f'{my_n} is not greater than {my_x}.')
 print("")
-#%%
+
 # Shopping Cost Using Indexing _____________________________________
 shop_dict = {'tomatoes' : 18, 'sponges' : 2, 'juice' : 4.5, 'foil' : 4, 'sugar' : 2}
 shop_dict['prices'] = {'tomatoes' : 0.87, 'sponges' : 0.29, 'juice' : 1.89, 'foil' : 1.29, 'sugar' : 1.09}
