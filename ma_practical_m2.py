@@ -67,7 +67,7 @@ while my_list_item < len(my_list):
         unique_list.append(my_list[my_list_item])
     my_list_item += 1
  
-# Simple Rock Paper Scissors -------------------------------------
+# Simple Rock Paper Scissors (+ Rounds) -------------------------
 print("\u0332".join("Simple Rock-Paper-Scissors"))
 # valid_inputs = ['rock', 'paper', 'scissor', 'scissors']
 # srps_playr_1 = input("Player 1: Rock, Paper or Scissor? >> ").lower()
@@ -80,7 +80,7 @@ print("\u0332".join("Simple Rock-Paper-Scissors"))
 
 def r_p_s_game(playr_1, playr_2):
     valid_inputs = ['rock', 'paper', 'scissor', 'scissors']
-    if (playr_1 or playr_2) not in valid_inputs:
+    if playr_1 not in valid_inputs or playr_2 not in valid_inputs:
         return f'Player 1 entered "{playr_1}" and Player 2 entered "{playr_2}". Invalid input.'
     elif playr_1 == playr_2:
         return f'Player 1 entered "{playr_1}" and Player 2 entered "{playr_2}". Its a tie!'
@@ -89,13 +89,34 @@ def r_p_s_game(playr_1, playr_2):
     else:
         return f'Player 1 entered "{playr_1}" and Player 2 entered "{playr_2}". Player 2 Wins!'
 
+num_playr_1_wins = 0
+num_playr_2_wins = 0
+
+# while (num_playr_1_wins or num_playr_2_wins) < 3:
+#     round_playr_1 = input("Player 1: Rock, Paper or Scissor? >> ").lower()
+#     round_playr_2 = input("Player 2: Rock, Paper or Scissor? >> ").lower()
+#     round_result = r_p_s_game(round_playr_1, round_playr_2)
+#     print(round_result)
+#     if 'invalid input' in round_result.lower():
+#         continue
+#     elif 'player 1 wins' in round_result.lower():
+#         num_playr_1_wins += 1
+#     elif 'player 2 wins' in round_result.lower():
+#         num_playr_2_wins += 1
+
+# if num_playr_1_wins == 3:
+#     print('Player 1 is the Champion!')
+# else:
+#     print('Player 2 is the Champion!')
+    
+    
 print(r_p_s_game('scissor', 'paper'))
 print(r_p_s_game('scissors', 'rock'))
 print(r_p_s_game('paper', 'paper'))
 print(r_p_s_game('rock', 'lizzard'))
 print('')
 
-# Counting Numbers -------------------------------------
+# Counting Numbers ----------------------------------------------
 print("\u0332".join("Counting Numbers"))
 count_x = 0
 
@@ -107,6 +128,50 @@ for cn_item in range(1, 51):
     print(cn_item)
 
 print('')
-# %%
-# Counting Even Numbers -------------------------------------
-print("\u0332".join("Counting Numbers"))
+
+# Counting Even Numbers -----------------------------------------
+print("\u0332".join("Counting Even Numbers"))
+even_count = 0
+
+while even_count < 50:
+    even_count += 1
+    if even_count % 2 == 0:
+        print(even_count)
+
+for cn_even_item in range(1, 51):
+    if cn_even_item % 2 == 0:
+        print(cn_even_item)
+
+print('')
+
+# Counting Even & Odd Numbers -----------------------------------
+print("\u0332".join("Counting Even & Odd Numbers"))
+sum_even_num = 0
+sum_odd_num = 0
+
+for even_num in range(1,101):
+    if even_num % 2 == 0:
+        sum_even_num += even_num
+print(sum_even_num)
+
+for odd_num in range(1,101):
+    if odd_num % 2 != 0:
+        sum_odd_num += odd_num
+print(sum_odd_num)      
+print('')
+
+# FizzBuzz ------------------------------------------------------
+print("\u0332".join("FizzBuzz"))
+
+for fbuzz_item in range(1, 101):
+    if fbuzz_item % 3 == 0 and fbuzz_item % 5 == 0:
+        print('for {} the print is FizzBuzz'.format(fbuzz_item))
+        continue
+    if fbuzz_item % 3 == 0:
+        print('for {} the print is Fizz'.format(fbuzz_item))
+    elif fbuzz_item % 5 == 0:
+        print('for {} the print is Buzz'.format(fbuzz_item))
+
+# Rock Paper Scissors with Rounds ------------------------------------------------------
+print("\u0332".join("FizzBuzz"))
+
