@@ -172,6 +172,110 @@ for fbuzz_item in range(1, 101):
     elif fbuzz_item % 5 == 0:
         print('for {} the print is Buzz'.format(fbuzz_item))
 
-# Rock Paper Scissors with Rounds ------------------------------------------------------
-print("\u0332".join("FizzBuzz"))
+# Rock Paper Scissors with Rounds (see above) -------------------
+print("\u0332".join("Rock Paper Scissors with Rounds (see above)"))
+print('')
 
+# Budget Calculator ------------------------------------------------------
+print("\u0332".join("Budget Calculator"))
+
+order_list = [("tom", 0.87, 4),
+              ("sug", 1.09, 3),
+              ("ws", 0.29, 4),
+              ("juc", 1.89, 1),
+              ("fo", 1.29, 2)]
+
+names = {"tom": "Tomatoes",
+         "sug": "Sugar",
+         "ws": "Washing Sponges",
+         "juc": "Juice",
+         "fo": "Foil"}
+
+budget = 10.00
+running_total = 0
+receipt = []
+
+for line_items in order_list:
+    line_cost = line_items[1] * line_items[2]
+    running_total += line_cost
+    budget -= line_cost
+    if budget < 0:
+        print(f"You have exceeded your budget by {round(abs(budget),2)}")
+        break
+    else:
+        print(f"Your running total after adding {line_items[2]} of {names[line_items[0]]} to the order is {running_total}")
+print('')
+
+# Odd and Even List Comprehension -------------------------------
+print("\u0332".join("Odd and Even List Comprehension"))
+
+sqrs_list = [sqrs**2 if sqrs % 2 == 0 else (sqrs + 1)**2 for sqrs in range(1, 20)]
+
+print(sqrs_list, '\n')
+
+# Dictionaries and List Comprehensions --------------------------
+print("\u0332".join("Dictionaries and List Comprehensions"))
+dict_one = {"name" : 'johnny', "skills" : ['java', 'c++', 'vscode', 'python']}
+dict_two = {"name" : 'jane', "skills" : ['memory', 'cordination', 'math', 'creativity']}
+dict_list = [dict_one, dict_two]
+last_c = dict_list[1]['skills'][0][-1]
+print(last_c)
+new_list = [len(dict_items['name']) for dict_items in dict_list]
+print(new_list)
+print(sum(new_list), '\n')
+
+# Shop Item Filter ----------------------------------------------
+print("\u0332".join("Shop Item Filter"))
+
+shop_dict = {"tom":0.87, "sug":1.09, "ws":0.29, "cc":1.89, "ccz":1.29}
+names_dict = {"tom":"Tomatoes", "sug":"Sugar", "ws":"Washing Sponges", "cc":"Coca-Cola", "ccz":"Coca-Cola Zero"}
+
+fil_dict = {fil_key:fil_val for fil_key,fil_val in shop_dict.items() if fil_val > 1}
+print(fil_dict)
+# fil_dict = {}
+# for fil_key,fil_val in shop_dict.items():
+#     if fil_val > 1:
+#         fil_dict[fil_key] = fil_val
+fil_shop = {names_dict[shop_key]:shop_val for shop_key,shop_val in fil_dict.items()}
+print(fil_shop)
+
+# Shape Maker ---------------------------------------------------
+print("\u0332".join("Shape Maker"))
+n=10
+for sym in range(0,n):
+    print('?' * sym)
+    if sym == n - 1:
+        for sym_sub in range(0,n):
+            print('?' * (sym - sym_sub - 1))
+print('')
+
+# Prime Numbers ---------------------------------------------------
+print("\u0332".join("Prime Numbers"))
+
+num_list = [num_item for num_item in range(10,51)]
+print(num_list)
+
+num_check = 47
+
+for p_num_chkr in range(2, num_check):
+    if num_check % p_num_chkr == 0:
+        print(f'{num_check} is not a prime number because it has a factor, {p_num_chkr}.')
+        break
+    elif p_num_chkr == num_check - 1:
+        print(f'{num_check} is a prime number.')
+
+
+# Prime Numbers ---------------------------------------------------
+print("\u0332".join("Prime Numbers"))
+
+num_list = [num_item for num_item in range(10,51)]
+print(num_list)
+p_num_list = []
+
+for num_check in num_list:
+    for p_num_chkr in range(2, num_check):
+        if num_check % p_num_chkr == 0:
+            break
+        elif p_num_chkr == num_check - 1:
+            p_num_list.append(p_num_chkr + 1)
+print(p_num_list)
