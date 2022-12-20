@@ -264,8 +264,7 @@ for p_num_chkr in range(2, num_check):
     elif p_num_chkr == num_check - 1:
         print(f'{num_check} is a prime number.')
 
-
-# Prime Numbers ---------------------------------------------------
+# Prime Numbers -------------------------------------------------
 print("\u0332".join("Prime Numbers"))
 
 num_list = [num_item for num_item in range(10,51)]
@@ -279,3 +278,87 @@ for num_check in num_list:
         elif p_num_chkr == num_check - 1:
             p_num_list.append(p_num_chkr + 1)
 print(p_num_list)
+print('This print statement was created in Python.', '\n' )
+
+# Void Functions ------------------------------------------------
+print("\u0332".join("Void Functions"))
+
+def void_function():
+    print(f'This is a void function.')
+
+void_result = void_function()
+print(void_result, end='\n\n')
+
+# Range Checker (incl. Boolean) ---------------------------------
+print("\u0332".join("Range Checker"))
+
+def in_range(lower_bound, upper_bound, number):
+    if number > lower_bound and number < upper_bound:
+        # print(f'{number} is between {lower_bound} and {upper_bound}.')
+        return True
+    else:
+        # print(f'{number} is NOT between {lower_bound} and {upper_bound}.')
+        return False
+
+lower_list = [lower for lower in range(0,10)]
+upper_list = [upper for upper in range(20,30)]
+number_list = [number for number in range(5,55,5)]
+check_list = list(zip(lower_list, upper_list, number_list))
+
+for lower_bound, upper_bound, number in check_list:
+    print(in_range(lower_bound, upper_bound, number))
+
+print('Completed', end='\n\n')
+
+# Return Unique Item List ---------------------------------------
+print("\u0332".join("Return Unique Item List"))
+
+input_list = [1, 3, 5, 6, 4, 3, 2, 3, 3, 4, 3, 4, 5, 6, 6, 4, 3, 2, 12, 3, 5, 63, 4, 5, 3, 3, 2]
+
+def unique_list(f_list):
+    new_list = []
+    for u_item in f_list:
+        if u_item not in new_list:
+            new_list.append(u_item)
+    return new_list
+
+print(unique_list(input_list), end='\n\n')
+
+# Volume of a Sphere --------------------------------------------
+print("\u0332".join("Volume of a Sphere"))
+
+def vol_of_sphere(radius):
+    import math
+    volume = (4 / 3) * math.pi * (radius ** 3)
+    return round(volume,2)
+
+print(vol_of_sphere(5))
+
+# Practical Exercise - Come up with your own function -----------
+# Function for telling your chinese zodiac sign based on birth yearh
+print("\u0332".join("Chinese Zodiac Sign Function"))
+
+def chinese_zodiac(b_year):
+    zodiac_dict = {
+        'Rat' : [1948, 1960, 1972, 1984, 1996, 2008, 2020],
+        'Ox' : [1949, 1961, 1973, 1985, 1997, 2009, 2021],
+        'Tiger' : [1950, 1962, 1974, 1986, 1998, 2010, 2022],
+        'Rabbit' :	[1951, 1963, 1975, 1987, 1999, 2011, 2023],
+        'Dragon' :	[1952, 1964, 1976, 1988, 2000, 2012, 2024],
+        'Snake' :	[1953, 1965, 1977, 1989, 2001, 2013, 2025],
+        'Horse' :	[1954, 1966, 1978, 1990, 2002, 2014, 2026],
+        'Goat' :	[1955, 1967, 1979, 1991, 2003, 2015, 2027],
+        'Monkey' :	[1956, 1968, 1980, 1992, 2004, 2016, 2028],
+        'Rooster' :	[1957, 1969, 1981, 1993, 2005, 2017, 2029],
+        'Dog' :	[1958, 1970, 1982, 1994, 2006, 2018, 2030],
+        'Pig' : [1959, 1971, 1983, 1995, 2007, 2019, 2031]
+        }
+    for zodiac_sign, zodiac_year_list in zodiac_dict.items():
+        if type(b_year) is not int or b_year < 1948 or b_year > 2031:
+            return 'Birth year invalid or out of range!'
+        elif b_year in zodiac_year_list:
+            return zodiac_sign
+
+print(chinese_zodiac(2018), end='\n\n')
+
+
