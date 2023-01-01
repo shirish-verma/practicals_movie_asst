@@ -304,6 +304,7 @@ lower_list = [lower for lower in range(0,10)]
 upper_list = [upper for upper in range(20,30)]
 number_list = [number for number in range(5,55,5)]
 check_list = list(zip(lower_list, upper_list, number_list))
+print(check_list)
 
 for lower_bound, upper_bound, number in check_list:
     print(in_range(lower_bound, upper_bound, number))
@@ -357,8 +358,6 @@ def chinese_zodiac(b_year):
         if type(b_year) is not int or b_year < 1948 or b_year > 2031:
             return 'Birth year invalid or out of range!'
         elif b_year in zodiac_year_list:
-            return zodiac_sign
+            return f'{b_year} is the year of the {zodiac_sign}'
 
-print(chinese_zodiac(2018), end='\n\n')
-
-print('additional changes')
+print(chinese_zodiac(2023), end='\n\n')
