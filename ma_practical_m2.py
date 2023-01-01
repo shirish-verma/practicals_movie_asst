@@ -336,7 +336,7 @@ def vol_of_sphere(radius):
 print(vol_of_sphere(5))
 
 # Practical Exercise - Come up with your own function -----------
-# Function for telling your chinese zodiac sign based on birth yearh
+# Function for telling your chinese zodiac sign based on birth year
 print("\u0332".join("Chinese Zodiac Sign Function"))
 
 def chinese_zodiac(b_year):
@@ -361,3 +361,134 @@ def chinese_zodiac(b_year):
             return f'{b_year} is the year of the {zodiac_sign}'
 
 print(chinese_zodiac(2023), end='\n\n')
+
+# Default Arguments ---------------------------------------------
+print("\u0332".join("Default Arguments"))
+
+d_shirt1 = {'name':'shirt_beach1', 'material':'polyester', 'size':'large', 'color':'pink', 'pattern':'floral_1'}
+att_list = ['material', 'size', 'quality', 'color']
+
+def print_dict(dict_8, att_to_list = 'All'):
+    if att_to_list != 'All':
+        for att_item in att_to_list:
+            if att_item in dict_8.keys():
+                print(f'{att_item} : {dict_8[att_item]}')
+            else:
+                print(f"'{att_item}' does not exist in the supplied dictionary.")
+    else:
+        for key_8, value_8 in dict_8.items():
+            print(f'{key_8} : {value_8}')
+
+print_dict(d_shirt1, att_list)
+
+# Profile Validation --------------------------------------------
+print("\u0332".join("Profile Validation"))
+
+user_inputs = ['s!agelgndmyth', 15, 'slm@yooha.com']
+
+def user_name_validator(user_name):
+    for un_char in user_name:
+        if un_char in '!@£$%^&*()':
+            return print(f'Invalid character {un_char} used in the user name.')
+    return print('User name successfully validated')
+
+def user_age_validator(user_age):
+    if user_age <= 12:
+        print(f'Age needs to be above 12.')
+    else:
+        return print('User age successfully validated')
+
+def user_email_validator(user_email):
+    if '@' not in user_email:
+        print(f'Invalid email address format.')
+    else:
+        return print('User email  successfully validated')
+
+
+def profile_validator(user_name, user_age, user_email):
+    user_name_validator(user_name)
+    user_age_validator(user_age)
+    user_email_validator(user_email)
+
+profile_validator(user_inputs[0], user_inputs[1], user_inputs[2])
+
+# Factorial Function --------------------------------------------
+print("\u0332".join("Factorial Function"))
+
+def factorial(fact_num):
+    if fact_num == 0:
+        return 1
+    fact_result = fact_num * factorial(fact_num - 1)
+    return fact_result
+
+print(f'{factorial(0):,}')
+
+# Fibonacci Sequence Function -----------------------------------
+print("\u0332".join("Fibonacci Sequence Function"))
+
+def fibonacci(fibo_final_iter):
+    if fibo_final_iter <= 1:
+        return fibo_final_iter
+    else:
+        return fibonacci(fibo_final_iter - 1) + fibonacci(fibo_final_iter - 2)
+
+# def fibonacci_list(fibo_n):
+    fibo_list = [fibonacci(fibo_iter) for fibo_iter in range(fibo_n)]
+    return fibo_list
+# print(fibonacci_list(30))
+# very inefficient for values above 35
+
+def multiple_of_7(mult_check):
+    if mult_check % 7 == 0:
+        return True
+    else:
+        return False
+
+def range_of_fibo_num(range_check):
+    if range_check >= 100 or range_check < 50:
+        return True
+
+fibo_n = 30
+for fibo_iter in range(fibo_n):
+    fibo_num = fibonacci(fibo_iter)
+    if multiple_of_7(fibo_num) == True:
+        print(f'{fibo_num} is a multiple of 7.')
+    elif range_of_fibo_num(fibo_num) == True:
+        print(f'{fibo_num} is either larger than 100 or is less than 50.')
+print('')
+
+# Reverse String Function -----------------------------------
+print("\u0332".join("Reverse String Function"))
+
+def inverse_old(og_string):
+    if len(og_string) <= 0:
+        return
+    nu_string = ''
+    nu_string += og_string[0]
+    inverse_old(og_string[1:])
+    return print(nu_string, end='')
+
+inverse_old('Asa')
+print('')
+print('')
+
+# Palindrome or not? -----------------------------------
+print("\u0332".join("Palindrome or not?"))
+
+def inverse(og_string):
+    if len(og_string) == 0:
+        return og_string
+    else:
+        return og_string[-1] + inverse(og_string[:-1])
+
+def palindrome_checker(test_word):
+    import string
+    clean_test_word = test_word
+    for punc_chars in string.punctuation:
+        clean_test_word = clean_test_word.replace(punc_chars,'')
+    if clean_test_word.lower() == inverse(clean_test_word).lower():
+        return f'Is {test_word} a palindrone?: True. (clean word: {clean_test_word.lower()})'
+    else:
+        return f'Is {test_word} a palindrone?: False. (clean word: {clean_test_word.lower()})'
+
+print(palindrome_checker('.b.b.b!Asa!!,@BBB'))
