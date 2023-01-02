@@ -492,3 +492,8 @@ def palindrome_checker(test_word):
         return f'Is {test_word} a palindrone?: False. (clean word: {clean_test_word.lower()})'
 
 print(palindrome_checker('.b.b.b!Asa!!,@BBB'))
+print("\n\n")
+print("END OF PRACTICE WORKBOOK.")
+print("\n\n")
+
+# python ma_practical_m2.py
