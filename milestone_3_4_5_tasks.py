@@ -34,10 +34,18 @@ def get_user_genre_choice():
     unique_genres = get_unique_genres()
     for items in unique_genres:
         print(items)
-    genre_choice = input('Selected Genre: ')
-    return genre_choice
+    while True:
+        try:
+            genre_choice = input('Selected Genre: ')
+            if genre_choice.title() in unique_genres:
+                return genre_choice
+            else:
+                raise ValueError
+        except ValueError:
+            print('This is not a valid genre.')
+    
 
-print('End of Milestone 4, Task 1', end='\n\n')
+print('End of Milestone 4, Task 1 & Milestone 5, Tasks 1, 2 & 3', end='\n\n')
 
 # Milestone 4, Task 2 - Show the movies in selected genre
 
@@ -59,9 +67,8 @@ def get_movie_by_index(genre_choice):
     print(f'The movies in your chosen genre "{genre_choice}" are: ')
     filtered_movies = get_movies_in_genre(genre_choice)
     filtered_movies_titles = [titles['title'] for titles in filtered_movies]
-    for f_index, f_title in enumerate(filtered_movies_titles):
-        f_index_user = f_index + 1
-        print(f'{f_index_user}. {f_title}')
+    for f_index, f_title in enumerate(filtered_movies_titles, 1):
+        print(f'{f_index}. {f_title}')
     selected_movie_index = int(input('Select a movie by entering its index number here: '))
     selected_movie_title = filtered_movies_titles[selected_movie_index - 1].lower()
     for movie in filtered_movies:

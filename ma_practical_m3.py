@@ -103,5 +103,8 @@ new_set3 = set(new_list3)
 overall_inter = new_set1.intersection(new_set2, new_set3)
 print(overall_inter)
 
+print("\n\n")
+print("END OF PRACTICE WORKBOOK.")
+print("\n\n")
 
-
+# python ma_practical_m3.py

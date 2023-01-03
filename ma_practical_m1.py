@@ -220,6 +220,11 @@ print(type(list_of_dict))
 print(new_mapped_list)
 print("")
 
+import os
+aicore_file_list = [path for path in os.listdir('d:/aicore') if os.path.isfile(os.path.join('d:/aicore', path))]
+print(aicore_file_list)
+
+
 # Simple Typed Function _____________________________________
 new_list_for_function = list(['what'] * 10)
 
